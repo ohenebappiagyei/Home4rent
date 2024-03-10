@@ -1,19 +1,64 @@
 body {
-	font-family: 'Arial', sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
-	background-color: #333;
-	color: #fff;
-	padding: 1rem;
-	text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
 }
 
 .container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.property-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+}
+
+.property-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.filters {
+    margin-top: 20px;
+}
+
+.locations h3,
+.property-type h4 {
+    margin-bottom: 10px;
+}
+
+ul.popover {
+    list-style: none;
+    padding: 0;
+}
+
+ul.popover li {
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Monthly-Budget h2 {
+    margin-bottom: 5px;
 }
