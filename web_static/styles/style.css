@@ -28,17 +28,24 @@ header h1 {
 
 nav ul {
     list-style: none;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 20px;
-    margin-top: 5cm;
+    margin-top: 6cm;
+    margin-right: -60%;
+    width: auto;
+}
+
+nav li {
+    margin-right: 15px;
 }
 
 nav a {
     text-decoration: none;
     color: #0f0000;
     font-weight: bold;
+    font-size: 24px;
     transition: color 0.3s ease;
 }
 
@@ -67,6 +74,34 @@ nav a:hover {
     border-radius: 4px;
 }
 
+.how-it-works-btn {
+    background: linear-gradient(to right, #76a5a8, #112c36);
+    color: #f3c1c1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.how-it-works-btn:hover {
+    background: linear-gradient(to right, #76a5a,  #112c36);
+    transform: scale(1.05);
+}
+
+
+.view-details-btn {
+
+}
+
+.search-btn {
+
+}
+
 .filters {
     margin-top: 20px;
 }
@@ -85,8 +120,9 @@ ul.popover li {
     margin-bottom: 5px;
 }
 
+
 button {
-    background-color: #333;
+    background-color: #c3cedd;
     color: #fff;
     padding: 10px 20px;
     border: none;
