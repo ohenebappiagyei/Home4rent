@@ -7,6 +7,7 @@ body {
 
 header {
    position: relative;
+   padding-bottom: 20px;
 }
 
 .header-background {
@@ -18,7 +19,6 @@ header {
 }
 
 .header-content {
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
 }
 
@@ -29,13 +29,21 @@ header h1 {
 nav ul {
     list-style: none;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     gap: 20px;
+    margin-top: 5cm;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: #0f0000;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #b5d7ee
 }
 
 
