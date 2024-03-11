@@ -12,12 +12,12 @@ body {
 }
 
 header {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   position: relative;
-   height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
 }
 
 .header-background {
@@ -54,9 +54,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #b5d7ee
+    color: #b5d7ee;
 }
-
 
 .container {
     max-width: 80%;
@@ -97,7 +96,6 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-
 .view-details-btn,
 .search-btn {
     background-color: #6b85aa;
@@ -118,11 +116,26 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#regions-details {
-    position: relative;
+/* Dropdown styles */
+.filters {
+    margin-top: 20px;
 }
 
-#regions-list {
+label {
+    margin-right: 10px;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+ul.dropdown-list {
+    list-style: none;
+    padding: 0;
     display: none;
     position: absolute;
     top: 100%;
@@ -135,46 +148,37 @@ nav a:hover {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-#regions-list.visible {
+ul.dropdown-list.visible {
     display: block;
     opacity: 1;
     visibility: visible;
 }
 
-#regions-list li {
+ul.dropdown-list li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-#regions-list li:last-child {
+ul.dropdown-list li:last-child {
     border-bottom: none;
 }
 
-#regions-list li:hover {
+ul.dropdown-list li:hover {
     background-color: #6b85aa;
     color: #333;
 }
 
-.filters {
-    margin-top: 20px;
-}
+@media (max-width:  768px) {
+    .filters label,
+    .filters select {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 
-.locations h3,
-.property-type h4 {
-    margin-bottom: 10px;
-}
-
-ul.popover {
-    list-style: none;
-    padding: 0;
-}
-
-ul.popover li {
-    margin-bottom: 5px;
-}
-
-.Monthly-Budget h2 {
-    margin-bottom: 5px;
+    .search-btn {
+        width: 100%;
+    }
 }

@@ -21,7 +21,6 @@
                 </ul>
             </nav>
             <button class="how-it-works-btn"><a href="use.html">How it works</a></button>
-            <!-- To be updated soon -->
         </div>
     </header>
 
@@ -42,58 +41,48 @@
 
         <!-- Search Bar Section -->
         <section class="filters">
-            <details id="regions-details">
-                <summary>
-                    <button class="search-btn" id="regions-btn"><h3>Regions</h3></button>
-                </summary>
-                <div class="locations popover" id="regions-list">
-                        <!-- Regions list goes here -->
-                        <li data-region="Ahafo">Ahafo Region</li>
-                        <li data-region="Ashanti">Ashanti Region</li>
-                        <li data-region="Bono">Bono Region</li>
-                        <li data-region="Bono East">Bono East Region</li>
-                        <li data-region="Central">Central Region</li>
-                        <li data-region="Eastern">Eastern Region</li>
-                        <li data-region="Accra">Greater Accra Region</li>
-                        <li data-region="North East">North East Region</li>
-                        <li data-region="Northern">Northern Region</li>
-                        <li data-region="Oti">Oti Region</li>
-                        <li data-region="Savannah">Savannah Region</li>
-                        <li data-region="Upper East">Upper East Region</li>
-                        <li data-region="Upper West">Upper West Region</li>
-                        <li data-region="Volta">Volta Region</li>                    
-                </div>
-            </details>
-            <details id="budget-details">
-                <summary>
-                    <button class="search-btn" id="budget-btn"><h3>Monthly Budget</h3></button>
-                </summary>
-                <div class="budget popover" id="budget-list">
-                        <!-- Budget list goes here -->
-                        <li data-budget="low budget">Gh¢ 500-800</li>
-                        <li data-budget="Normal budget">Gh¢ 800-1000</li>
-                        <li data-budget="Standard budget">Gh¢ 1000-1200</li>
-                        <li data-budget="High">Gh¢ 1200-1500</li>
-                        <li data-budget="Ceiling">Gh¢ 1500-1800</li>
-                        <li data-budget="Very High">Gh¢ 1800-2000</li>
-                        <li data-budget="Wealthy">Above Gh¢ 2000</li>
-                </div>
-            </details>
-            <details id="property-type">
-                <summary>
-                    <button class="search-btn" id="property-btn"><h3>Property Type</h3></button>
-                </summary>
-                <div class="property popover" id="property-list">
-                        <!-- Property list goes here -->
-                        <li data-property="Single Normal">Single Normal</li>
-                        <li data-property="Single Standard">Single Standard</li>
-                        <li data-property="Chamber & Hall Normal">Chamber & Hall Normal</li>
-                        <li data-property="Chamber & Hall Standard">Chamber & Hall Standard</li>
-                        <li data-property="2 rooms & Hall Normal">2 rooms & Hall Normal</li>
-                        <li data-property="2 rooms & Hall Standard">2 rooms & Hall Standard</li>
-                        <li data-property="Exquisite">Exquisite</li>
-                </div>
-            </details>
+            <!-- Regions dropdown using <select> -->
+            <label for="regions-select">Regions:</label>
+            <select name="regions" id="regions-select">
+                <option value="Ahafo">Ahafo Region</option>
+                <option value="Ashanti">Ashanti Region</option>
+                <option value="Bono">Bono Region</option>
+                <option value="Bono East">Bono East Region</option>
+                <option value="Central">Central Region</option>
+                <option value="Eastern">Eastern Region</option>
+                <option value="Accra">Greater Accra Region</option>
+                <option value="North East">North East Region</option>
+                <option value="Northern">Northern Region</option>
+                <option value="Oti">Oti Region</option>
+                <option value="Savannah">Savannah Region</option>
+                <option value="Upper East">Upper East Region</option>
+                <option value="Upper West">Upper West Region</option>
+                <option value="Volta">Volta Region</option>
+            </select>
+
+            <!-- Monthly Budget dropdown using <select> -->
+            <label for="budget-select">Monthly Budget:</label>
+            <select name="budget" id="budget-select">
+                <option value="low">Gh¢ 500-800</option>
+                <option value="normal">Gh¢ 800-1000</option>
+                <option value="standard">Gh¢ 1000-1200</option>
+                <option value="high">Gh¢ 1200-1500</option>
+                <option value="ceiling">Gh¢ 1500-1800</option>
+                <option value="very-high">Gh¢ 1800-2000</option>
+                <option value="wealthy">Above Gh¢ 2000</option>
+            </select>
+
+            <!-- Property Type dropdown using <select> -->
+            <label for="property-select">Property Type:</label>
+            <select name="property" id="property-select">
+                <option value="single-normal">Single Normal</option>
+                <option value="single-standard">Single Standard</option>
+                <option value="chamber-hall-normal">Chamber & Hall Normal</option>
+                <option value="chamber-hall-standard">Chamber & Hall Standard</option>
+                <option value="2-rooms-hall-normal">2 rooms & Hall Normal</option>
+                <option value="2-rooms-hall-standard">2 rooms & Hall Standard</option>
+                <option value="exquisite">Exquisite</option>
+            </select>
         </section>
     </div>
 </body>

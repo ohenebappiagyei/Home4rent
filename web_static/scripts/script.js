@@ -1,59 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Regions
-    var regionsBtn = document.getElementById('regions-btn');
-    var regionsList = document.getElementById('regions-list');
-
-    regionsBtn.addEventListener('click', function () {
-        // Toggle the visibility of the regions list
-        regionsList.classList.toggle('visible');
+    var regionsSelect = document.getElementById('regions-select');
+    regionsSelect.addEventListener('change', function () {
+        var selectedRegion = regionsSelect.value;
+        fetchAndDisplaySpaces(selectedRegion);
     });
 
-    regionsList.addEventListener('click', function (event) {
-        if (event.target.tagName === 'LI') {
-            // Handle the click on a region
-            var selectedRegion = event.target.dataset.region;
-            // Call a function to fetch and display spaces for the selected region
-            fetchAndDisplaySpaces(selectedRegion);
-        }
-    });
-
-    // Budget
-    var budgetBtn = document.getElementById('budget-btn');
-    var budgetList = document.getElementById('budget-list');
-
-    budgetBtn.addEventListener('click', function () {
-        // Toggle the visibility of the budget list
-        budgetList.classList.toggle('visible');
-    });
-
-    budgetList.addEventListener('click', function (event) {
-        if (event.target.tagName === 'LI') {
-            // Handle the click on a budget
-            var selectedBudget = event.target.dataset.budget;
-            // Call a function to fetch and display spaces for the selected budget
-            fetchAndDisplaySpaces(selectedBudget);
-        }
+    // Monthly Budget
+    var budgetSelect = document.getElementById('budget-select');
+    budgetSelect.addEventListener('change', function () {
+        var selectedBudget = budgetSelect.value;
+        fetchAndDisplaySpaces(selectedBudget);
     });
 
     // Property Type
-    var propertyBtn = document.getElementById('property-btn');
-    var propertyList = document.getElementById('property-list');
-
-    propertyBtn.addEventListener('click', function () {
-        // Toggle the visibility of the property list
-        propertyList.classList.toggle('visible');
+    var propertySelect = document.getElementById('property-select');
+    propertySelect.addEventListener('change', function () {
+        var selectedProperty = propertySelect.value;
+        fetchAndDisplaySpaces(selectedProperty);
     });
 
-    propertyList.addEventListener('click', function (event) {
-        if (event.target.tagName === 'LI') {
-            // Handle the click on a property type
-            var selectedProperty = event.target.dataset.property;
-            // Call a function to fetch and display spaces for the selected property type
-            fetchAndDisplaySpaces(selectedProperty);
-        }
-    });
-
-    // Function to fetch and display available spaces for a given parameter (region, budget, property)
+    // Function to fetch and display available spaces based on the selected parameter (region, budget, property)
     function fetchAndDisplaySpaces(parameter) {
         // Placeholder URL, replace with your actual backend API endpoint
         fetch(`https://example.com/api/spaces?${parameter}`)
