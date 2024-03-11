@@ -121,6 +121,11 @@ nav a:hover {
 #regions-list {
     display: none;
 }
+
+#regions-list.visible {
+    display: block;
+}
+
 .filters {
     margin-top: 20px;
 }
