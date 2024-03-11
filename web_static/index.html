@@ -46,8 +46,7 @@
                 <summary>
                     <button class="search-btn" id="regions-btn"><h3>Regions</h3></button>
                 </summary>
-                <div class="locations">
-                    <ul class="popover" id="regions-list">
+                <div class="locations popover" id="regions-list">
                         <!-- Regions list goes here -->
                         <li data-region="Ahafo">Ahafo Region</li>
                         <li data-region="Ashanti">Ashanti Region</li>
@@ -62,21 +61,39 @@
                         <li data-region="Savannah">Savannah Region</li>
                         <li data-region="Upper East">Upper East Region</li>
                         <li data-region="Upper West">Upper West Region</li>
-                        <li data-region="Volta">Volta Region</li>
-                    </ul>
+                        <li data-region="Volta">Volta Region</li>                    
                 </div>
             </details>
-            <div class="property-type">
-                <h4>Single room, Chamber and Hall</h4>
-                <ul class="popover" id="spaces-list">
-                    <!-- Spaces list goes here -->
-                </ul>
-                <div class="Monthly-Budget">
-                    <ul class="popover">
-                        <!-- Monthly budget list goes here -->
-                    </ul>
+            <details id="budget-details">
+                <summary>
+                    <button class="search-btn" id="budget-btn"><h3>Monthly Budget</h3></button>
+                </summary>
+                <div class="budget popover" id="budget-list">
+                        <!-- Budget list goes here -->
+                        <li data-budget="low budget">Gh¢ 500-800</li>
+                        <li data-budget="Normal budget">Gh¢ 800-1000</li>
+                        <li data-budget="Standard budget">Gh¢ 1000-1200</li>
+                        <li data-budget="High">Gh¢ 1200-1500</li>
+                        <li data-budget="Ceiling">Gh¢ 1500-1800</li>
+                        <li data-budget="Very High">Gh¢ 1800-2000</li>
+                        <li data-budget="Wealthy">Above Gh¢ 2000</li>
                 </div>
-            </div>
+            </details>
+            <details id="property-type">
+                <summary>
+                    <button class="search-btn" id="property-btn"><h3>Property Type</h3></button>
+                </summary>
+                <div class="property popover" id="property-list">
+                        <!-- Property list goes here -->
+                        <li data-property="Single Normal">Single Normal</li>
+                        <li data-property="Single Standard">Single Standard</li>
+                        <li data-property="Chamber & Hall Normal">Chamber & Hall Normal</li>
+                        <li data-property="Chamber & Hall Standard">Chamber & Hall Standard</li>
+                        <li data-property="2 rooms & Hall Normal">2 rooms & Hall Normal</li>
+                        <li data-property="2 rooms & Hall Standard">2 rooms & Hall Standard</li>
+                        <li data-property="Exquisite">Exquisite</li>
+                </div>
+            </details>
         </section>
     </div>
 </body>
