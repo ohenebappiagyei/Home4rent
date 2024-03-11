@@ -118,12 +118,43 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#regions-details {
+    position: relative;
+}
+
 #regions-list {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 #regions-list.visible {
     display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+#regions-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#regions-list li:last-child {
+    border-bottom: none;
+}
+
+#regions-list li:hover {
+    background-color: #6b85aa;
+    color: #333;
 }
 
 .filters {
