@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Homes4rent app</title>
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-background">
+        <div class="header-content">
+            <img src="images/Homes4Rent.png" alt="Homes4Rent Image" class="logo" width="600" height="100">
+            <nav>
+                <ul>
+                    <li><a href="browse.html">Browse Homes</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="/login.html">Login</a></li>
+                    <li><a href="/signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+            <button class="how-it-works-btn"><a href="use.html">How it works</a></button>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Property Listing Section -->
+        <section id="property-listings">
+            <!-- Property Card Example -->
+            <div class="property-card">
+                <img src="images/property-image.jpg" alt="Property Image" width="1500" height="20">
+                <h2>Executive Apartment</h2>
+                <p>Location: East Legon, Greater Accra</p>
+                <p>Price: Ghc2000 per month</p>
+                <button class="view-details-btn">View Details</button>
+            </div>
+            <!-- More property cards to be added soon -->
+        </section>
+
+        <!-- Search Bar Section -->
+        <section class="filters">
+            <!-- Regions dropdown using <select> -->
+            <label for="regions-select">Regions:</label>
+            <select name="regions" id="regions-select">
+                <option value="Ahafo">Ahafo Region</option>
+                <option value="Ashanti">Ashanti Region</option>
+                <option value="Bono">Bono Region</option>
+                <option value="Bono East">Bono East Region</option>
+                <option value="Central">Central Region</option>
+                <option value="Eastern">Eastern Region</option>
+                <option value="Accra">Greater Accra Region</option>
+                <option value="North East">North East Region</option>
+                <option value="Northern">Northern Region</option>
+                <option value="Oti">Oti Region</option>
+                <option value="Savannah">Savannah Region</option>
+                <option value="Upper East">Upper East Region</option>
+                <option value="Upper West">Upper West Region</option>
+                <option value="Volta">Volta Region</option>
+            </select>
+
+            <!-- Monthly Budget dropdown using <select> -->
+            <label for="budget-select">Monthly Budget:</label>
+            <select name="budget" id="budget-select">
+                <option value="low">Gh¢ 500-800</option>
+                <option value="normal">Gh¢ 800-1000</option>
+                <option value="standard">Gh¢ 1000-1200</option>
+                <option value="high">Gh¢ 1200-1500</option>
+                <option value="ceiling">Gh¢ 1500-1800</option>
+                <option value="very-high">Gh¢ 1800-2000</option>
+                <option value="wealthy">Above Gh¢ 2000</option>
+            </select>
+
+            <!-- Property Type dropdown using <select> -->
+            <label for="property-select">Property Type:</label>
+            <select name="property" id="property-select">
+                <option value="single-normal">Single Normal</option>
+                <option value="single-standard">Single Standard</option>
+                <option value="chamber-hall-normal">Chamber & Hall Normal</option>
+                <option value="chamber-hall-standard">Chamber & Hall Standard</option>
+                <option value="2-rooms-hall-normal">2 rooms & Hall Normal</option>
+                <option value="2-rooms-hall-standard">2 rooms & Hall Standard</option>
+                <option value="exquisite">Exquisite</option>
+            </select>
+        </section>
+    </div>
+
+    <!-- Modal for Space Details -->
+    <div id="spaceDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="spaceDetailsContent"></div>
+        </div>
+    </div>
+</body>
+</html>
