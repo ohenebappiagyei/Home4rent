@@ -8,14 +8,14 @@ body {
 .logo {
     max-width: 100%;
     height: auto;
-    margin-bottom: 200px;
+    margin-bottom: 20px;
 }
 
 header {
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: flex-end;
+   justify-content: center;
    position: relative;
    height: 100vh;
 }
@@ -33,19 +33,12 @@ header {
     padding: 32px;
 }
 
-header h1 {
-    font-family: 'Jacques Francois', sans-serif;
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
 nav ul {
     list-style: none;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 20px;
-    width: auto;
 }
 
 nav li {
@@ -66,7 +59,7 @@ nav a:hover {
 
 
 .container {
-    max-width: 1200px;
+    max-width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -100,19 +93,34 @@ nav a:hover {
 }
 
 .how-it-works-btn:hover {
-    background: linear-gradient(to right, #76a5a,  #112c36);
+    background: linear-gradient(to right, #76a5a8,  #112c36);
     transform: scale(1.05);
 }
 
 
-.view-details-btn {
-
-}
-
+.view-details-btn,
 .search-btn {
-
+    background-color: #6b85aa;
+    color: #1b0b0b;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
+.view-details-btn:hover,
+.search-btn:hover,
+.view-details-btn:focus,
+.search-btn:hover {
+    background-color: #a9b8c8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#regions-list {
+    display: none;
+}
 .filters {
     margin-top: 20px;
 }
@@ -129,16 +137,6 @@ ul.popover {
 
 ul.popover li {
     margin-bottom: 5px;
-}
-
-
-button {
-    background-color: #c3cedd;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 .Monthly-Budget h2 {

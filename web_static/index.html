@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <title>Homes4rent app</title>
+    <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -41,18 +42,34 @@
 
         <!-- Search Bar Section -->
         <section class="filters">
-            <button class="search-btn">Search</button>
-            <div class="locations">
-                <h3>Regions</h3>
-                <h4>Greater Accra, Ashanti...</h4>
-                <ul class="popover">
-                    <!-- Regions list goes here -->
-                </ul>
-            </div>
+            <details id="regions-details">
+                <summary>
+                    <button class="search-btn" id="regions-btn"><h3>Regions</h3></button>
+                </summary>
+                <div class="locations">
+                    <ul class="popover" id="regions-list">
+                        <!-- Regions list goes here -->
+                        <li data-region="Ahafo">Ahafo Region</li>
+                        <li data-region="Ashanti">Ashanti Region</li>
+                        <li data-region="Bono">Bono Region</li>
+                        <li data-region="Bono East">Bono East Region</li>
+                        <li data-region="Central">Central Region</li>
+                        <li data-region="Eastern">Eastern Region</li>
+                        <li data-region="Accra">Greater Accra Region</li>
+                        <li data-region="North East">North East Region</li>
+                        <li data-region="Northern">Northern Region</li>
+                        <li data-region="Oti">Oti Region</li>
+                        <li data-region="Savannah">Savannah Region</li>
+                        <li data-region="Upper East">Upper East Region</li>
+                        <li data-region="Upper West">Upper West Region</li>
+                        <li data-region="Volta">Volta Region</li>
+                    </ul>
+                </div>
+            </details>
             <div class="property-type">
                 <h4>Single room, Chamber and Hall</h4>
-                <ul class="popover">
-                    <!-- Property types list goes here -->
+                <ul class="popover" id="spaces-list">
+                    <!-- Spaces list goes here -->
                 </ul>
                 <div class="Monthly-Budget">
                     <ul class="popover">
