@@ -1,0 +1,14 @@
+from django.db import models
+
+class Property(models.Model):
+    name = models.CharField(max_length=50)
+    property_type = models.CharField(max_length=50)
+    gps_location = models.CharField(max_length=50)
+    location = models.CharField(max_length=50)
+    number_of_rooms = models.CharField(max_length=50)
+    water_availability = models.CharField(max_length=50)
+    electricity_availability = models.CharField(max_length=50)
+    bathroom_availability = models.CharField(max_length=50)
+    kitchen_availability = models.CharField(max_length=50)
+    pictures = models.ImageField()
+    price = models.CharField(max_length=50)
