@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/property-image.jpg") #000;
+  background-position: center;
+  background-size: cover;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Search form styles */
+.search-form {
+    width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.search-form h2 {
+    margin-bottom: 20px;
+}
+
+.search-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-form label {
+    margin-bottom: 10px;
+}
+
+.search-form input,
+.search-form select,
+.search-form button {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.search-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #45a049;
+}
+
+/* Property listings styles */
+.property-listings {
+    margin-top: 30px;
+}
+
+.property-listings h2 {
+    margin-bottom: 20px;
+}

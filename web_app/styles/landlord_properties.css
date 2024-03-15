@@ -1,0 +1,41 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Property list styles */
+.property-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.property-list h2 {
+    margin-bottom: 20px;
+}
+
+/* Frame container styles */
+.frame-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Iframe styles */
+iframe {
+    border: 1px solid saddlebrown;
+    width: 100%;
+    height: 300px;
+}
