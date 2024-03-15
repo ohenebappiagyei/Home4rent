@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,14 +8,17 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
 }
 
+/* Body styles */
 body {
   background: #f2f2f2;
 }
 
+/* Header styles */
 header {
   position: fixed;
   top: 0;
@@ -26,6 +30,7 @@ header {
   background: #333;
 }
 
+/* Navbar styles */
 .navbar {
   display: flex;
   padding: 0 10px;
@@ -60,7 +65,9 @@ header {
   margin-left: 0;
 }
 
-header a, footer a {
+/* Common link styles for header and footer */
+header a,
+footer a {
   margin-left: 40px;
   text-decoration: none;
   color: #fff;
@@ -69,10 +76,12 @@ header a, footer a {
   display: inline-block;
 }
 
-header a:hover, footer a:hover {
+header a:hover,
+footer a:hover {
   color: #ddd;
 }
 
+/* Homepage styles */
 .homepage {
   height: 100vh;
   width: 100%;
@@ -131,11 +140,19 @@ header a:hover, footer a:hover {
   text-decoration: none;
 }
 
-.content a:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.3);
+/* Styles for card link */
+.cards .card a {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
 }
 
+/* Hover effect for card link */
+.cards .card a:hover {
+  transform: translateY(-5px);
+}
+
+/* Section styles */
 section {
   display: flex;
   align-items: center;
@@ -151,6 +168,7 @@ section > p {
   text-align: center;
 }
 
+/* Card styles */
 section .cards {
   display: flex;
   flex-wrap: wrap;
@@ -160,7 +178,43 @@ section .cards {
   justify-content: space-between;
 }
 
-section.about {
+section .cards .card {
+  background: #f2f2f2;
+  padding: 40px 15px;
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 40px;
+  width: calc(100% / 3 -30px);
+  text-align: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Add hover effect */
+section .cards .card:hover {
+  background-color: #b9e3eb;
+}
+
+.portfolio .cards .card {
+  padding: 0 0 20px;
+}
+
+.portfolio .card img {
+  width: 100%;
+  padding-bottom: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.cards .card p {
+  padding: 0 15px;
+  margin-top: 5px;
+}
+
+/* About section styles */
+.about {
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -183,49 +237,11 @@ section.about {
   padding-left: 20px;
 }
 
-section .cards .card {
-  background: #fff;
-  padding: 40px 15px;
-  list-style: none;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
-  margin-bottom: 40px;
-  width: calc(100% / 3 - 30px);
-  text-align: center;
-}
-
-.portfolio .cards .card {
-  padding: 0 0 20px;
-}
-
-.services .card img {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 20px;
-  border-radius: 100%;
-  object-fit: cover;
-}
-
-.portfolio .card img {
-  width: 100%;
-  padding-bottom: 10px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 7px;
-}
-
-.cards .card p {
-  padding: 0 15px;
-  margin-top: 5px;
-}
-
-.about .row {
-  padding: 0 10px;
-}
-
+/* Contact section styles */
 .contact .row {
   margin: 60px 0 90px;
   display: flex;
+  max-width: 1200px;
   max-width: 1200px;
   width: 100%;
   align-items: center;
@@ -234,19 +250,20 @@ section .cards .card {
 
 .contact .row .col {
   padding: 0 10px;
-  width: calc(100% / 2 - 50px);
+  width: calc(100%/2 -50px);
 }
 
-.contact .col p {
+.contact .row .col p {
   margin-bottom: 10px;
 }
 
-.contact .col p i {
+.contact .row .col p i {
   color: #7a7a7a;
   margin-right: 10px;
 }
 
-.contact form input {
+.contact form input,
+.contact form textarea {
   height: 45px;
   margin-bottom: 20px;
   padding: 10px;
@@ -257,20 +274,15 @@ section .cards .card {
 }
 
 .contact form textarea {
-  padding: 10px;
-  width: 100%;
-  font-size: 16px;
   height: 150px;
-  outline: none;
   resize: vertical;
-  border: 1px solid #bfbfbf;
 }
 
 .contact form button {
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 17px;
-  color: #fff;
+  color: #bfbfbf;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -282,6 +294,7 @@ section .cards .card {
   background: #525252;
 }
 
+/* Footer styles */
 footer {
   width: 100%;
   display: flex;
@@ -299,13 +312,14 @@ footer div {
 }
 
 footer span {
-  color: #fff;
+  color: aquamarine;
 }
 
 footer a {
-  padding: 0;
+  padding 0;
 }
 
+/* Media queries for responsiveness */
 @media screen and (max-width: 860px) {
   .navbar .all-links {
     position: fixed;
@@ -330,13 +344,8 @@ footer a {
     display: block;
   }
 
-  section > p {
-    text-align: center;
-  }
-
   section .cards .card {
-    width: calc(100% / 2 - 15px);
-    margin-bottom: 30px;
+    width: calc(100% / 2 -15px);
   }
 
   .homepage .content h1 {
