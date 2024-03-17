@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landlord Dashboard</title>
-    <link rel="stylesheet" href="styles/landlord.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landlord Dashboard</title>
+  <link rel="stylesheet" href="styles/landlord.css">
 </head>
 <body>
-    <header>
-        <h1>Landlord Dashboard</h1>
-    </header>
-    <main>
-        <section class="property-form">
-            <h2>Add Property</h2>
-            <form action="#" method="post" enctype="multipart/form-data">
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required>
-                <label for="price">Price:</label>
-                <input type="number" id="price" name="price" required>
-                <label for="image">Upload Image:</label>
-                <input type="file" id="image" name="image" accept="image/*" required>
-                <button type="submit">Add Property</button>
-            </form>
-        </section>
-    </main>
+  <header>
+    <h1>Landlord Dashboard</h1>
+  </header>
+  <main>
+    <div class="button-container">
+      <button data-target="add-property">Add Property</button>
+      <button data-target="manage-properties">Track Applications</button>
+    </div>
+    <section id="add-property" class="content-section">
+      <h2>Add Property</h2>
+      <form action="#" method="post" enctype="multipart/form-data">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="5" required></textarea>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <button type="submit">Add Property</button>
+      </form>
+    </section>
+    <section id="manage-properties" class="content-section">
+      <h2>Manage Properties & Applications</h2>
+      <p>This section will display applications for your properties. (Content hidden initially)</p>
+    </section>
+  </main>
+  <script src="scripts/landlord.js" defer></script>
 </body>
 </html>
