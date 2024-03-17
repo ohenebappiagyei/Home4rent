@@ -51,20 +51,47 @@ header {
 }
 
 /* Styles for the "Add Property" section */
-.content-section#add-property form {
+.content-section#track-properties form {
   display: flex; /* Arrange form elements in a row */
   flex-direction: column; /* Stack elements vertically */
   gap: 10px; /* Spacing between form elements */
 }
 
-.content-section#add-property label {
+.content-section#track-properties label {
   width: 100px; /* Adjust label width (optional) */
-  text-align: right; /* Align labels to the right */
+  text-align: left; /* Align labels to the right */
 }
 
-.content-section#add-property input[type="text"],
-.content-section#add-property input[type="number"] {
+.content-section#track-properties button[type="submit"] {
+  background-color: #4CAF50; /* Green color example */
+  color: white;
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Maintain rounded corners */
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.content-section#track-properties button[type="submit"]:hover {
+  background-color: #3e8e41; /* Darker green hover color */
+}
+
+
+.content-section#track-properties input[type="text"],
+.content-section#track-properties input[type="number"],
+.content-section#track-properties textarea {
+  border-radius: 4px;
+  padding: 5px;
   width: 100%; /* Adjust input width (optional) */
+}
+
+.content-section#track-properties label[for="location"],
+.content-section#track-properties label[for="price"],
+.content-section#track-properties label[for="description"] {
+  color: #e91728; 
+  font-size: larger;
+  font-weight: bold; 
+  margin-bottom: 5px; 
 }
 
 /* No specific styles needed for "Manage Properties & Applications" section yet */
