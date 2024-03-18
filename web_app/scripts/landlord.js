@@ -30,3 +30,52 @@ buttons.forEach(button => {
 
 // Set the first button as active initially (optional)
 buttons[0].classList.add('active');
+
+// Function to populate the "Manage Properties" section with frame containers
+function populateProperties(propertiesData) {
+  const managePropertiesSection = document.getElementById('manage-properties');
+  
+  // Clear any existing content
+  managePropertiesSection.innerHTML = '';
+  
+  // Loop through each property data and create a frame container for each
+  propertiesData.forEach(property => {
+    const frameContainer = document.createElement('div');
+    frameContainer.classList.add('frame-container');
+    
+    // Create elements for location, price, and short description
+    const location = document.createElement('p');
+    location.textContent = 'Location: ' + property.location;
+    
+    const price = document.createElement('p');
+    price.textContent = 'Price: ' + property.price;
+    
+    const description = document.createElement('p');
+    description.textContent = 'Description: ' + property.description;
+    
+    // Append location, price, and description to frame container
+    frameContainer.appendChild(location);
+    frameContainer.appendChild(price);
+    frameContainer.appendChild(description);
+    
+    // Append frame container to manage properties section
+    managePropertiesSection.appendChild(frameContainer);
+  });
+}
+
+// Example property data (replace with actual data fetched from server)
+const examplePropertiesData = [
+  {
+    location: '10 Hickory St, East Legon, Accra',
+    price: '1500/month',
+    description: 'This is a sample short description'
+  },
+  {
+    location: '5 Watermelon St, East Legon, Acccra',
+    price: '1000/month',
+    description: 'This is a sample short description'
+  }
+];
+
+// Populate the "Manage Properties" section with example data
+populateProperties(examplePropertiesData);

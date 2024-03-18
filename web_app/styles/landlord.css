@@ -52,28 +52,28 @@ header {
 
 /* Styles for the "Add Property" section */
 .content-section#track-properties form {
-  display: flex; /* Arrange form elements in a row */
-  flex-direction: column; /* Stack elements vertically */
-  gap: 10px; /* Spacing between form elements */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .content-section#track-properties label {
-  width: 100px; /* Adjust label width (optional) */
-  text-align: left; /* Align labels to the right */
+  width: 100px;
+  text-align: left;
 }
 
 .content-section#track-properties button[type="submit"] {
-  background-color: #4CAF50; /* Green color example */
+  background-color: #4CAF50;
   color: white;
-  border: none; /* Remove default border */
-  border-radius: 4px; /* Maintain rounded corners */
+  border: none;
+  border-radius: 4px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
 
 .content-section#track-properties button[type="submit"]:hover {
-  background-color: #3e8e41; /* Darker green hover color */
+  background-color: #3e8e41;
 }
 
 
@@ -82,7 +82,7 @@ header {
 .content-section#track-properties textarea {
   border-radius: 4px;
   padding: 5px;
-  width: 100%; /* Adjust input width (optional) */
+  width: 100%;
 }
 
 .content-section#track-properties label[for="location"],
@@ -93,5 +93,40 @@ header {
   font-weight: bold; 
   margin-bottom: 5px; 
 }
+/* Styles for frame containers */
+.frame-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
-/* No specific styles needed for "Manage Properties & Applications" section yet */
+/* Styles for location, price, and description */
+.frame-container p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Additional styling for location */
+.frame-container p:first-child {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Additional styling for price */
+.frame-container p:nth-child(2) {
+  color: #009688; /* Green color for price */
+}
+
+/* Additional styling for description */
+.frame-container p:nth-child(3) {
+  color: #666;
+}
+
+/* Optional hover effect for frame containers */
+.frame-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
