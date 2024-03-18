@@ -27,37 +27,36 @@ buttons.forEach(button => {
   });
 });
 
-
 // Set the first button as active initially (optional)
 buttons[0].classList.add('active');
 
 // Function to populate the "Manage Properties" section with frame containers
 function populateProperties(propertiesData) {
   const managePropertiesSection = document.getElementById('manage-properties');
-  
+
   // Clear any existing content
   managePropertiesSection.innerHTML = '';
-  
+
   // Loop through each property data and create a frame container for each
   propertiesData.forEach(property => {
     const frameContainer = document.createElement('div');
     frameContainer.classList.add('frame-container');
-    
+
     // Create elements for location, price, and short description
     const location = document.createElement('p');
     location.textContent = 'Location: ' + property.location;
-    
+
     const price = document.createElement('p');
     price.textContent = 'Price: ' + property.price;
-    
+
     const description = document.createElement('p');
     description.textContent = 'Description: ' + property.description;
-    
+
     // Append location, price, and description to frame container
     frameContainer.appendChild(location);
     frameContainer.appendChild(price);
     frameContainer.appendChild(description);
-    
+
     // Append frame container to manage properties section
     managePropertiesSection.appendChild(frameContainer);
   });
@@ -79,3 +78,52 @@ const examplePropertiesData = [
 
 // Populate the "Manage Properties" section with example data
 populateProperties(examplePropertiesData);
+
+// Function to populate the "Track Applications" section with frame containers
+function populateApplications(applicationsData) {
+  const trackApplicationsSection = document.getElementById('track-applications');
+
+  // Clear any existing content
+  trackApplicationsSection.innerHTML = '';
+
+  // Loop through each application data and create a frame container for each
+  applicationsData.forEach(application => {
+    const frameContainer = document.createElement('div');
+    frameContainer.classList.add('frame-container');
+
+    // Create elements for applicant name, property, and status
+    const applicantName = document.createElement('p');
+    applicantName.textContent = 'Applicant: ' + application.applicantName;
+
+    const propertyName = document.createElement('p');
+    propertyName.textContent = 'Property: ' + application.propertyName;
+
+    const status = document.createElement('p');
+    status.textContent = 'Status: ' + application.status;
+
+    // Append applicant name, property, and status to frame container
+    frameContainer.appendChild(applicantName);
+    frameContainer.appendChild(propertyName);
+    frameContainer.appendChild(status);
+
+    // Append frame container to track applications section
+    trackApplicationsSection.appendChild(frameContainer);
+  });
+}
+
+// Example applications data (to be replaced with actual data fetched from server)
+const exampleApplicationsData = [
+  {
+    applicantName: 'Prince Osei',
+    propertyName: '11 Hickory St',
+    status: 'Pending'
+  },
+  {
+    applicantName: 'Jane Doe',
+    propertyName: '12 East Legon Extension',
+    status: 'Approved'
+  }
+];
+
+// Populate the "Track Applications" section with example data
+populateApplications(exampleApplicationsData);

@@ -14,7 +14,12 @@
     <div class="button-container">
       <button data-target="track-properties">My properties</button>
       <button data-target="manage-properties">Add property</button>
+      <button data-target="track-applications">Track Applications</button>
     </div>
+    <section id="manage-properties" class="content-section">
+      <h2>Manage Properties & Applications</h2>
+      <p>This section will display applications for your properties. (Content hidden initially)</p>
+    </section>
     <section id="track-properties" class="content-section">
       <h2>Add Property</h2>
       <form action="#" method="post" enctype="multipart/form-data">
@@ -27,10 +32,6 @@
         <input type="file" id="image" name="image" accept="image/*" required>
         <button type="submit">Add Property</button>
       </form>
-    </section>
-    <section id="manage-properties" class="content-section">
-      <h2>Manage Properties & Applications</h2>
-      <p>This section will display applications for your properties. (Content hidden initially)</p>
     </section>
   </main>
   <script src="scripts/landlord.js" defer></script>
