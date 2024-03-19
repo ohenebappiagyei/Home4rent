@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="#" method="post">
+    <form **id="login-form"** action="#" method="post">
       <h2>Login</h2>
         <div class="input-field">
         <input type="text" required>
@@ -30,7 +30,9 @@
       </div>
       <button type="submit">Log In</button>
       <div class="register">
-        <p>Don't have an account? <a href="signup.html">Register</a></p>
+        <p>Don't have an account? 
+          {%url  'signup' as signup %}
+          <a href="{{ signup }}">Register</a></p>
       </div>
     </form>
   </div>
