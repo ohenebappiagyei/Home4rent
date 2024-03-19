@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home4Rent Sign Up</title>
-  <link rel="stylesheet" href="styles/signup.css">  </head>
+  <link rel="stylesheet" href="styles/signup.css">  
+</head>
 <body>
   <div class="signup">
     <h2>Sign Up</h2>
-    <form action="process_signup.php" method="post">
+    <form id="signup-form">
+      <label for="user_type">Account Type:</label>
+      <select id="user_type" name="user_type" required>
+        <option value="">Select Account Type</option>
+        <option value="landlord">Landlord</option>
+        <option value="tenant">Tenant</option>
+      </select>
+      <br>
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
       <br>
@@ -27,5 +35,6 @@
       <button type="submit">Sign Up</button>
     </form>
   </div>
+  <script src="scripts/signup.js"></script>
 </body>
 </html>
