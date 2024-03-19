@@ -32,7 +32,7 @@ buttons[0].classList.add('active');
 
 // Function to populate the "Manage Properties" section with frame containers
 function populateProperties(propertiesData) {
-  const managePropertiesSection = document.getElementById('manage-properties');
+  const managePropertiesSection = document.getElementById('track-properties');
 
   // Clear any existing content
   managePropertiesSection.innerHTML = '';
