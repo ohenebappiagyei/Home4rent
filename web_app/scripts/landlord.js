@@ -79,19 +79,32 @@ const examplePropertiesData = [
 // Populate the "Manage Properties" section with example data
 populateProperties(examplePropertiesData);
 
+// Fetch applications from the backend
+function fetchApplications() {
+  // Make a fetch request to your backend endpoint to get applications data
+  fetch('/api/applications')
+    .then(response => response.json())
+    .then(data => {
+      // Populate applications section with fetched data
+      populateApplications(data);
+    })
+    .catch(error => console.error('Error fetching applications:', error));
+}
+
+
 // Function to populate the "Track Applications" section with frame containers
 function populateApplications(applicationsData) {
-  const trackApplicationsSection = document.getElementById('track-applications');
+  const trackApplicationsSection = document.getElementById('applications-list');
 
   // Clear any existing content
   trackApplicationsSection.innerHTML = '';
 
-  // Loop through each application data and create a frame container for each
+  // Loop through each application data and create a container for each
   applicationsData.forEach(application => {
-    const frameContainer = document.createElement('div');
-    frameContainer.classList.add('frame-container');
+    const applicationContainer = document.createElement('div');
+    applicationContainer.classList.add('application-container');
 
-    // Create elements for applicant name, property, and status
+    // Display applicant name, property, and status
     const applicantName = document.createElement('p');
     applicantName.textContent = 'Applicant: ' + application.applicantName;
 
@@ -101,29 +114,54 @@ function populateApplications(applicationsData) {
     const status = document.createElement('p');
     status.textContent = 'Status: ' + application.status;
 
-    // Append applicant name, property, and status to frame container
-    frameContainer.appendChild(applicantName);
-    frameContainer.appendChild(propertyName);
-    frameContainer.appendChild(status);
+    // Display approve and decline buttons
+    const approveButton = document.createElement('button');
+    approveButton.textContent = 'Approve';
+    approveButton.addEventListener('click', () => {
+      // Call a function to handle approval action
+      handleApproval(application.id);
+    });
 
-    // Append frame container to track applications section
-    trackApplicationsSection.appendChild(frameContainer);
+    const declineButton = document.createElement('button');
+    declineButton.textContent = 'Decline';
+    declineButton.addEventListener('click', () => {
+      // Call a function to handle decline action
+      handleDecline(application.id);
+    });
+
+    // Append elements to application container
+    applicationContainer.appendChild(applicantName);
+    applicationContainer.appendChild(propertyName);
+    applicationContainer.appendChild(status);
+    applicationContainer.appendChild(approveButton);
+    applicationContainer.appendChild(declineButton);
+
+    // Append application container to track applications section
+    trackApplicationsSection.appendChild(applicationContainer);
   });
 }
 
-// Example applications data (to be replaced with actual data fetched from server)
-const exampleApplicationsData = [
-  {
-    applicantName: 'Prince Osei',
-    propertyName: '11 Hickory St',
-    status: 'Pending'
-  },
-  {
-    applicantName: 'Jane Doe',
-    propertyName: '12 East Legon Extension',
-    status: 'Approved'
-  }
-];
+// Function to handle approving an application
+function handleApproval(applicationId) {
+  // Make a request to your backend to approve the application
+  fetch(`/api/applications/${applicationId}/approve`, { method: 'POST' })
+    .then(() => {
+      // Optionally, update UI or fetch applications again
+      fetchApplications();
+    })
+    .catch(error => console.error('Error approving application:', error));
+}
 
-// Populate the "Track Applications" section with example data
-populateApplications(exampleApplicationsData);
+// Function to handle declining an application
+function handleDecline(applicationId) {
+  // Make a request to your backend to decline the application
+  fetch(`/api/applications/${applicationId}/decline`, { method: 'POST' })
+    .then(() => {
+      // Optionally, update UI or fetch applications again
+      fetchApplications();
+    })
+    .catch(error => console.error('Error declining application:', error));
+}
+
+// Populate applications initially
+fetchApplications();
