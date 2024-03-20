@@ -80,3 +80,41 @@ main {
 .property-listings h2 {
     margin-bottom: 20px;
 }
+
+.listings-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.property-listing {
+    width: calc(33% - 10px);
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.property-listing img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.property-listing a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.property-listing button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.property-listing button:hover {
+    background-color: #45a049;
+}
