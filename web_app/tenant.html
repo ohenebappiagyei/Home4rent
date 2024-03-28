@@ -1,53 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find a Property</title>
-    <link rel="stylesheet" href="styles/tenant.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Property</title>
+  <link rel="stylesheet" href="styles/tenant.css">
 </head>
 <body>
-    <header>
-        <h1>Find a Property</h1>
-    </header>
-    <main>
+  <header>
+    <h1>Find a Property</h1>
+  </header>
+  <main>
+    <div class="search-container hidden">
         <section class="search-form">
             <h2>Search Properties</h2>
             <form action="#" method="get">
-                <label for="budget">Budget:</label>
-                <input type="number" id="budget" name="budget" required>
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location">
-                <label for="room-type">Room Type:</label>
-                <select id="room-type" name="room-type">
-                    <option value="single">Single Room Normal</option>
-                    <option value="single">Single Room Standard</option>
-                    <option value="chamber-hall">Chamber & Hall Normal</option>
-                    <option value="chamber-hall">Chamber & Hall Standard</option>
-                    <option value="2-rooms-hall">2 Rooms & Hall Normal</option>
-                    <option value="2-rooms-hall">2 Rooms & Hall Standard</option>
-                    <option value="exquisite">Exquisite</option>
-                </select>
-                <button type="submit">Search</button>
+              <label for="budget">Budget:</label>
+              <input type="number" id="budget" name="budget" required>
+              <label for="location">Location:</label>
+              <input type="text" id="location" name="location">
+              <label for="room-type">Room Type:</label>
+              <select id="room-type" name="room-type">
+                <option value="single">Single Room Normal</option>
+                <option value="single">Single Room Standard</option>
+                <option value="chamber-hall">Chamber & Hall Normal</option>
+                <option value="chamber-hall">Chamber & Hall Standard</option>
+                <option value="2-rooms-hall">2 Rooms & Hall Normal</option>
+                <option value="2-rooms-hall">2 Rooms & Hall Standard</option>
+                <option value="exquisite">Exquisite</option>
+              </select>
+              <button type="submit">Search</button>
             </form>
-        </section>
-        <section class="property-listings">
-            <h2>Available Properties</h2>
-            <!-- Property listings will be dynamically generated here -->
-        </section>
-    </main>
-</body>
-<!-- 
-    <template id="property-template">
+          </section>
+    </div>
+    <section class="property-listings">
+      <h2>Available Properties</h2>
+      <div class="listings-container hidden"></div>
+    </section>
+    <section class="search-form">
+    </section>
+    <button id="need-services-btn">Need Services</button>
+    <section class="services-modal" id="services-modal">
+        <h2>Request Services</h2>
+        <form id="service-request-form">
+            <p>Select the services you need:</p>
+            <input type="checkbox" id="plumbing" name="services[]" value="plumbing">
+            <label for="plumbing">Plumbing</label>
+            <br>
+            <input type="checkbox" id="electricals" name="services[]" value="electricals">
+            <label for="electricals">Electricals</label>
+            <br>
+            <input type="checkbox" id="logistics-management" name="services[]" value="logistics-management">
+            <label for="logistics-management">Logistics Management</label>
+            <br>
+            <input type="checkbox" id="home-cleaning" name="services[]" value="home-cleaning">
+            <label for="home-cleaning">Home Cleaning</label>
+            <br>
+            <input type="checkbox" id="internal-laundry" name="services[]" value="internal-laundry">
+            <label for="internal-laundry">Internal Laundry</label>
+            <br>
+            <input type="checkbox" id="external-laundry" name="services[]" value="external-laundry">
+            <label for="external-laundry">External Laundry</label>
+            <br>
+            <input type="checkbox" id="cooking-services" name="services[]" value="cooking-services">
+            <label for="cooking-services">Cooking Services</label>
+            <br>
+            <button type="submit">Request Services</button>
+        </form>
+        <button id="close-modal-btn">Close</button>
+    </section>
+  </main>
+  <template id="property-template">
     <article class="property-listing">
-        <img src="placeholder.jpg" alt="Property Image">
-        <h3><a href="#">Property Title</a></h3>
-        <p>**Address:** <span class="address"></span></p>
-        <p>**Description:** <span class="description"></span></p>
-        <p>**Rent:** $<span class="rent"></span></p>
-        <button class="view-details">View Details</button>
+      <img src="placeholder.jpg" alt="Property Image">
+      <h3><a href="#">Property Title</a></h3>
+      <p>**Address:** <span class="address"></span></p>
+      <p>**Description:** <span class="description"></span></p>
+      <p>**Rent:** $<span class="rent"></span></p>
+      <button class="view-details">View Details</button>
     </article>
-    </template>
-
--->
+  </template>
+</body>
 </html>

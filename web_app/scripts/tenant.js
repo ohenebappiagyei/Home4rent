@@ -1,4 +1,11 @@
 const searchForm = document.querySelector('.search-form');
+const searchContainer = document.querySelector('.search-container');
+const needServicesBtn = document.getElementById('need-services-btn');
+
+needServicesBtn.addEventListener('click', () => {
+  searchContainer.classList.toggle('hidden');
+});
+
 
 searchForm.addEventListener('submit', async (event) => {
   event.preventDefault(); // Prevent default form submission behavior
@@ -27,8 +34,19 @@ searchForm.addEventListener('submit', async (event) => {
   }
 });
 
-// Implement this function to handle displaying listings and potentially adding a loading indicator during the fetch process
 function displayListings(listingsData) {
-  // ... your logic to iterate through listingsData and create HTML elements for each property using the template
-  // ... I will add a loading indicator while fetching data
+  // ... the logic to iterate through listingsData and create HTML elements for each property using the template
+
+  // Get the listings container element
+  const listingsContainer = document.querySelector('.listings-container');
+
+  // Remove the "hidden" class if data exists
+  if (listingsData && listingsData.length > 0) {
+    listingsContainer.classList.remove('hidden');
+  } else {
+    // Handle cases where no listings are found (optional: display a message)
+    console.log("No listings found");
+  }
+
+  // ... populate the listings container with created elements (assuming you have logic for this)
 }
