@@ -21,7 +21,7 @@ body::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url("../images/property-image.jpg") #000;
+  /* background: url("../images/property-image.jpg") #000; */
   background-position: center;
   background-size: cover;
 }
@@ -112,8 +112,8 @@ h2 {
 }
 
 button {
-  background: #fff;
-  color: #000;
+  background: #000000;
+  color: #ffffff;
   font-weight: 600;
   border: none;
   padding: 12px 20px;
@@ -125,13 +125,18 @@ button {
 }
 
 button:hover {
-  color: #fff;
-  border-color: #fff;
+  color: #000000;
+  border-color: #000000;
   background: rgba(255, 255, 255, 0.15);
 }
 
 .register {
   text-align: center;
   margin-top: 30px;
-  color: #fff;
+  color: #ffffff;
+}
+
+input {
+  height: 50px;
+  margin: 10px 0;
 }

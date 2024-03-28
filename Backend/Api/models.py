@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 class Property(models.Model):
     name = models.CharField(max_length=50)
@@ -15,3 +16,9 @@ class Property(models.Model):
     review = models.CharField(max_length=200)
     duration = models.CharField(max_length=50)
     rent_status = models.BooleanField(max_length=50)
+
+class MyUser(AbstractUser):
+    ghcard = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.username
