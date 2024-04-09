@@ -27,8 +27,10 @@ class SignUpView(CreateView):
 @login_required
 def dashboard(request):
     user_profile = request.user
+    args = {}
     if user_profile.user_type == MyUser.Landlord:
-        return render(request, 'Api/landlord.html')
+        args["properties"] = Property.objects.all()
+        return render(request, 'Api/landlord.html', args)
     elif user_profile.user_type == MyUser.Tenant:
         return render(request, 'Api/tenant.html')
     else:
@@ -50,6 +52,7 @@ def add_property(request):
         price = request.POST['price']
         description = request.POST['description']
         contact = request.POST['contact']
+        property_type = request.POST['property_type']
         image = request.FILES['image']
 
         # Save the image
@@ -64,14 +67,15 @@ def add_property(request):
                 price=price,
                 description=description,
                 contact=contact,
-                image_url=image_url
+                property_type=property_type,
+                image=image_url
             )
             property.save()
-            return render(request, 'Api/landlord.html')  # Redirect to success page
         except IntegrityError:
             # Handle database errors (e.g., duplicate entries)
             return render(request, 'error_page.html')
-
+        else:
+            return redirect('dashboard')  # Redirect to success page
     else:
         # Render the form (GET request)
         return render(request, 'Api/landlord.html')

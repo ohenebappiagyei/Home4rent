@@ -88,7 +88,8 @@ body {
   .content-section#manage-properties label[for="location"],
   .content-section#manage-properties label[for="price"],
   .content-section#manage-properties label[for="description"],
-  .content-section#manage-properties label[for="contact"] {
+  .content-section#manage-properties label[for="contact"],
+  .content-section#manage-properties label[for="room-type"] {
     color: #e91728; 
     font-size: larger;
     font-weight: bold; 

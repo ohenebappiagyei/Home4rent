@@ -77,7 +77,7 @@ const examplePropertiesData = [
 ];
 
 // Populate the "Manage Properties" section with example data
-populateProperties(examplePropertiesData);
+// populateProperties(examplePropertiesData);
 
 // Function to populate the "Track Applications" section with frame containers
 function populateApplications(applicationsData) {

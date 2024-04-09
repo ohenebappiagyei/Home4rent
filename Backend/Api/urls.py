@@ -14,4 +14,5 @@ urlpatterns = [
     # path('dashboard/', views.dashboard, name='dashboard'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path("tenant/", views.tenant,  name='tenant'),
+    path("add-property/", views.add_property,  name='add-property'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

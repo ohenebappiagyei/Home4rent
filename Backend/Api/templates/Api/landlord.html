@@ -26,11 +26,28 @@
     </div>
     <section id="track-properties" class="content-section">
         <h2>Manage Properties & Applications</h2>
-        <p>This section will display applications for your properties. (Content hidden initially)</p>
+        <!-- <p>This section will display applications for your properties. (Content hidden initially)</p> -->
+        {% for property in properties %}
+        <div class="frame-container">
+          <p>
+            Location: {{property.location}}
+          </p>
+          <p>
+            Description: {{property.description}}
+          </p>
+          <p>
+            Price (GHC): {{property.price}}
+          </p>
+          <p>
+            Property Type: {{property.property_type}}
+          </p>
+        </div>
+        {% endfor %}    
     </section>
+    
     <section id="manage-properties" class="content-section hidden">
       <h2>Add New Property</h2>
-      <form id="add_property_form" method="post" enctype="multipart/form-data">
+      <form id="add_property_form" method="post" enctype="multipart/form-data" action="/add-property/">
         {% csrf_token %}
         <label for="location">Location:</label>
         <input type="text" id="location" name="location" required placeholder="Format: Street name, Town, Region">
@@ -38,11 +55,22 @@
         <input type="number" id="price" name="price" required placeholder="all prices are quoted in Ghc">
         <label for="description">Description:</label>
         <textarea id="description" name="description" rows="5" required placeholder="About the facilities in your property"></textarea>
+        <label for="property_type">Property Type:</label>
+        <select id="property_type" name="property_type" required>
+            <option value="single">Single Room Normal</option>
+            <option value="single">Single Room Standard</option>
+            <option value="chamber-hall">Chamber & Hall Normal</option>
+            <option value="chamber-hall">Chamber & Hall Standard</option>
+            <option value="2-rooms-hall">2 Rooms & Hall Normal</option>
+            <option value="2-rooms-hall">2 Rooms & Hall Standard</option>
+            <option value="exquisite">Exquisite</option>
+        </select>
         <label for="contact">Contact:</label>
         <textarea id="contact" name="contact" required placeholder="Your phone number"></textarea>
         <input type="file" id="image" name="image" accept="image/*" required>
         <button type="submit">Add Property</button>
-      </form>
+    </form>
+    
     </section>
     
     <section id="track-applications" class="content-section hidden">

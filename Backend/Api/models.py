@@ -22,6 +22,7 @@ class Property(models.Model):
     price = models.CharField(max_length=50, default=0)
     description = models.CharField(max_length=200, default="")
     contact = models.CharField(max_length=50, default=0)
+    property_type = models.CharField(max_length=100, default="")
     image = models.ImageField()
 
     def __str__(self):
