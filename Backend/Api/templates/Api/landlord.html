@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+<link rel="stylesheet" href="{% static 'Api/landlord.css' %}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landlord Dashboard</title>
+  <!-- <link rel="stylesheet" href="styles/landlord.css"> -->
+</head>
+<body>
+  <header>
+    <h1>Landlord Dashboard</h1>
+    <div class="button">
+      <button>
+        <a href="{% url 'logout' %}">Logout</a>
+      </button>
+    </div>
+  </header>
+  <main>
+    <div class="button-container">
+      <button data-target="track-properties">My properties</button>
+      <button data-target="manage-properties">Add property</button>
+      <button data-target="track-applications">Track Applications</button>
+    </div>
+    <section id="track-properties" class="content-section">
+        <h2>Manage Properties & Applications</h2>
+        <p>This section will display applications for your properties. (Content hidden initially)</p>
+    </section>
+    <section id="manage-properties" class="content-section hidden">
+      <h2>Add New Property</h2>
+      <form id="add_property_form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required placeholder="Format: Street name, Town, Region">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required placeholder="all prices are quoted in Ghc">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="5" required placeholder="About the facilities in your property"></textarea>
+        <label for="contact">Contact:</label>
+        <textarea id="contact" name="contact" required placeholder="Your phone number"></textarea>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <button type="submit">Add Property</button>
+      </form>
+    </section>
+    
+    <section id="track-applications" class="content-section hidden">
+      <h2>Track Applications</h2>
+      <p> This section will pull all the applications by various tenants for the specific landlord. (Content hidden initially)</p>
+    </section>
+  </main>
+  <script src="{% static 'Api/landlord.js' %}" defer></script>
+</body>
+</html>

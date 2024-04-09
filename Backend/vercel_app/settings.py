@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Api'
+    'Api',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -129,5 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "Api.MyUser"
 
-LOGIN_REDIRECT_URL = "home"  # new
-LOGOUT_REDIRECT_URL = "home" #new
+LOGIN_REDIRECT_URL = "dashboard"  # new
+LOGOUT_REDIRECT_URL = "index" #new
+
+

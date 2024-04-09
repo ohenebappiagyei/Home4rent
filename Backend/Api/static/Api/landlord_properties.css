@@ -1,0 +1,58 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Property list styles */
+.property-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.property-list h2 {
+    margin-bottom: 20px;
+}
+
+/* Property item styles */
+.property-item {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex; /* Kwame, this allows image and details to be side-by-side */
+}
+
+.property-item img {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.property-details {
+    flex: 1; /* This allows details to fill remaining space */
+}
+
+.property-details p,
+.property-details ul {
+    margin-bottom: 10px;
+}
+
+/* Property actions styles */
+.property-actions {
+    text-align: right;
+}
+
+.property-actions a {
+    margin-left: 10px;
+}

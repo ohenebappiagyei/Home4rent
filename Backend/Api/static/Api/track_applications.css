@@ -1,0 +1,70 @@
+/* General styles (applicable to most elements on the page) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  /* Styles for the application details section */
+  .application-details {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .application-details h3 {
+    margin-bottom: 10px;
+  }
+  
+  .application-details p {
+    margin-bottom: 5px;
+  }
+  
+  /* Styles for application actions (approve/reject buttons) */
+  .application-actions {
+    text-align: right;
+  }
+  
+  .application-actions button {
+    background-color: #ddd; /* Default background color */
+    color: #333; /* Default text color */
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .application-actions button:hover {
+    background-color: #ccc; /* Hover background color */
+  }
+  
+  /* Visual indicators for application status (Optional) */
+  .application-details.pending {
+    border-left: 5px solid orange;
+  }
+  
+  .application-actions button.approved {  /* Use class for approved button */
+    background-color: green; /* Green background for approved */
+    color: white; /* White text for approved */
+  }
+  
+  .application-actions button.rejected {  /* Use class for rejected button */
+    background-color: red; /* Red background for rejected */
+    color: white; /* White text for rejected */
+  }
+  
+  
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+  

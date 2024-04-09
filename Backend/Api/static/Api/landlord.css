@@ -1,0 +1,133 @@
+body {
+    background-image: url("./images/image0.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styles for the header */
+  header {
+    background-color: #333;
+    color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Styles for the button container */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .button-container button {
+    background-color: #009edb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .button-container button:hover {
+    background-color: #292929; 
+  }
+  
+  .button-container button.active {
+    background-color: #222;
+  }
+  
+  /* Styles for content sections (initially hidden) */
+  .content-section {
+    display: block; 
+    padding: 20px;
+  }
+  
+  /* Override hidden class behavior */
+  .hidden {
+    display: none !important;
+  }
+  
+  /* Styles for the "Add Property" section */
+  .content-section#manage-properties form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .content-section#manage-properties label {
+    width: 100px;
+    text-align: left;
+  }
+  
+  .content-section#manage-properties button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .content-section#manage-properties button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  
+  .content-section#manage-properties input[type="text"],
+  .content-section#manage-properties input[type="number"],
+  .content-section#manage-properties textarea {
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .content-section#manage-properties label[for="location"],
+  .content-section#manage-properties label[for="price"],
+  .content-section#manage-properties label[for="description"],
+  .content-section#manage-properties label[for="contact"] {
+    color: #e91728; 
+    font-size: larger;
+    font-weight: bold; 
+    margin-bottom: 5px; 
+  }
+  /* Styles for frame containers */
+  .frame-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for location, price, and description */
+  .frame-container p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Additional styling for location */
+  .frame-container p:first-child {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Additional styling for price */
+  .frame-container p:nth-child(2) {
+    color: #009688; /* Green color for price */
+  }
+  
+  /* Additional styling for description */
+  .frame-container p:nth-child(3) {
+    color: #666;
+  }
+  
+  /* Optional hover effect for frame containers */
+  .frame-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
