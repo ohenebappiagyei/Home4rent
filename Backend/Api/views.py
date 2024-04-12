@@ -48,6 +48,7 @@ def tenant(request):
 def add_property(request):
     if request.method == 'POST':
         # Get form data
+        name = request.POST['name']
         location = request.POST['location']
         price = request.POST['price']
         description = request.POST['description']
@@ -63,6 +64,7 @@ def add_property(request):
         try:
             # Create a new Property object
             property = Property(
+                name=name,
                 location=location,
                 price=price,
                 description=description,
@@ -79,3 +81,9 @@ def add_property(request):
     else:
         # Render the form (GET request)
         return render(request, 'Api/landlord.html')
+
+def property_search(request):
+    p = Property.objects.get(pk=11)
+    user = MyUser.objects.get(user=request.user.id)
+    print(p.id)
+    return render(request, 'Api/tenant.html', {"user": user, "p": p})

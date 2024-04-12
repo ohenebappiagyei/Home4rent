@@ -85,13 +85,14 @@ body {
     width: 100%;
   }
   
+  .content-section#manage-properties label[for="name"],
   .content-section#manage-properties label[for="location"],
   .content-section#manage-properties label[for="price"],
   .content-section#manage-properties label[for="description"],
   .content-section#manage-properties label[for="contact"],
-  .content-section#manage-properties label[for="room-type"] {
+  .content-section#manage-properties label[for="property_type"] {
     color: #e91728; 
-    font-size: larger;
+    font-size: 15px;
     font-weight: bold; 
     margin-bottom: 5px; 
   }

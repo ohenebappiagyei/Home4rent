@@ -1,9 +1,8 @@
-{% load static %}
-
-<link rel="stylesheet" href="{% static 'Api/tenant.css' %}">
-
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
+
+<link rel="stylesheet" href="{% static 'Api/tenant.css' %}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +11,13 @@
 </head>
 <body>
   <header>
-    <h1>Find a Property</h1>
+    <!-- <h1>Find a Property</h1> -->
   </header>
   <main>
     <div class="search-container hidden">
         <section class="search-form">
             <h2>Search Properties</h2>
-            <form action="#" method="get">
+            <form method="GET">
               <label for="budget">Budget:</label>
               <input type="number" id="budget" name="budget" required>
               <label for="location">Location:</label>
@@ -33,16 +32,26 @@
                 <option value="2-rooms-hall">2 Rooms & Hall Standard</option>
                 <option value="exquisite">Exquisite</option>
               </select>
-              <button type="submit">Search</button>
+              <input type="submit" value="submit">
             </form>
           </section>
     </div>
     <section class="property-listings">
       <h2>Available Properties</h2>
-      <div class="listings-container hidden"></div>
+      <div class="listings-container">
+      </div>
     </section>
     <section class="search-form">
+      <ul>
+        <li>{{ user.username }}</li>
+        <li>{{ p.id }}</li>
+    </ul>
     </section>
+    <div class="button">
+      <button>
+        <a href="{% url 'logout' %}">Logout</a>
+      </button>
+    </div>
     <button id="need-services-btn">Need Services</button>
     <section class="services-modal" id="services-modal">
         <h2>Request Services</h2>

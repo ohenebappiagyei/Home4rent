@@ -18,6 +18,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class Property(models.Model):
+    name = models.CharField(max_length=100, default="")
     location = models.CharField(max_length=100, default="")
     price = models.CharField(max_length=50, default=0)
     description = models.CharField(max_length=200, default="")

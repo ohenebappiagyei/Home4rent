@@ -30,6 +30,9 @@
         {% for property in properties %}
         <div class="frame-container">
           <p>
+            Name: {{property.name}}
+          </p>
+          <p>
             Location: {{property.location}}
           </p>
           <p>
@@ -41,6 +44,9 @@
           <p>
             Property Type: {{property.property_type}}
           </p>
+          <p>
+            <img src="{{property.image}}" alt="Property Image">
+          </p>
         </div>
         {% endfor %}    
     </section>
@@ -49,10 +55,12 @@
       <h2>Add New Property</h2>
       <form id="add_property_form" method="post" enctype="multipart/form-data" action="/add-property/">
         {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Format: FirstName, LastName">
         <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required placeholder="Format: Street name, Town, Region">
+        <input type="text" id="location" name="location" required placeholder="Format: Street name, (GPS Address), Town, Region">
         <label for="price">Price:</label>
-        <input type="number" id="price" name="price" required placeholder="all prices are quoted in Ghc">
+        <input type="number" id="price" name="price" required placeholder="All prices are quoted in Ghc">
         <label for="description">Description:</label>
         <textarea id="description" name="description" rows="5" required placeholder="About the facilities in your property"></textarea>
         <label for="property_type">Property Type:</label>
