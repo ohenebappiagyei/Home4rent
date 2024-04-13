@@ -1,0 +1,39 @@
+<!-- search.html -->
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<link rel="stylesheet" href="{% static 'Api/tenant.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Property</title>
+    <!-- <link rel="stylesheet" href="styles/tenant.css"> -->
+  </head>
+<body>
+    <main>
+        <div class="search-container">
+            <section class="search-form">
+                <h2>Search Properties</h2>
+        <form method="GET">
+            {{ form.as_p }}
+            <button type="submit">Search</button>
+        </form>
+        </section>
+        </div>
+        <section class="search-form">
+            <h2>Available Properties</h2>
+        {% if results %}
+            <h2>Search Results for "{{ query }}"</h2>
+            <ul>
+                {% for result in results %}
+                <li>{{ result.name }} <a href="#">view room</a></li>
+                {% empty %}
+                <li>No results found</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </section>
+    </main>
+
+</body>
+</html>

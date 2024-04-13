@@ -2,7 +2,7 @@
 <html lang="en">
   {% load static %}
 
-<link rel="stylesheet" href="{% static 'Api/tenant.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'Api/tenant.css' %}"> -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,11 @@
     <!-- <h1>Find a Property</h1> -->
   </header>
   <main>
+    <ul>
+      {% for property in object_list %}
+          <li>{{ property.name }}</li>
+      {% endfor %}
+  </ul>
     <div class="search-container hidden">
         <section class="search-form">
             <h2>Search Properties</h2>
@@ -43,8 +48,9 @@
     </section>
     <section class="search-form">
       <ul>
-        <li>{{ user.username }}</li>
-        <li>{{ p.id }}</li>
+        {% for property in object_list %}
+            <li>{{ property.name }}</li>
+        {% endfor %}
     </ul>
     </section>
     <div class="button">

@@ -16,10 +16,56 @@ from django.contrib.auth.models import AbstractUser
 #     pictures = models.ImageField()
 #     price = models.CharField(max_length=50)
 
+location_choices = [
+    ("Adabraka", "Adabraka"),
+    ("Airport Residential Area", "Airport Residential Area"),
+    ("Cantonments", "Cantonments"),
+    ("Dansoman", "Dansoman"),
+    ("Dzorwulu", "Dzorwulu"),
+    ("East Legon", "East Legon"),
+    ("Haatso", "Haatso"),
+    ("Kaneshie", "Kaneshie"),
+    ("Labadi", "Labadi"),
+    ("Madina", "Madina"),
+    ("Mamprobi", "Mamprobi"),
+    ("Nima", "Nima"),
+    ("North Ridge", "North Ridge"),
+    ("Osu", "Osu"),
+    ("Ridge", "Ridge"),
+    ("Sakumono", "Sakumono"),
+    ("Spintex", "Spintex"),
+    ("Tema", "Tema"),
+    ("Teshie", "Teshie"),
+    ("West Legon", "West Legon")
+]
+
 
 class Property(models.Model):
+    LOCATION_CHOICES = [
+        ("Adabraka", "Adabraka"),
+        ("Airport Residential Area", "Airport Residential Area"),
+        ("Cantonments", "Cantonments"),
+        ("Dansoman", "Dansoman"),
+        ("Dzorwulu", "Dzorwulu"),
+        ("East Legon", "East Legon"),
+        ("Haatso", "Haatso"),
+        ("Kaneshie", "Kaneshie"),
+        ("Labadi", "Labadi"),
+        ("Madina", "Madina"),
+        ("Mamprobi", "Mamprobi"),
+        ("Nima", "Nima"),
+        ("North Ridge", "North Ridge"),
+        ("Osu", "Osu"),
+        ("Ridge", "Ridge"),
+        ("Sakumono", "Sakumono"),
+        ("Spintex", "Spintex"),
+        ("Tema", "Tema"),
+        ("Teshie", "Teshie"),
+        ("West Legon", "West Legon")
+    ]
+
     name = models.CharField(max_length=100, default="")
-    location = models.CharField(max_length=100, default="")
+    location = models.CharField(max_length=100, choices=LOCATION_CHOICES)
     price = models.CharField(max_length=50, default=0)
     description = models.CharField(max_length=200, default="")
     contact = models.CharField(max_length=50, default=0)

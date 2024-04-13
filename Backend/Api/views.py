@@ -1,10 +1,10 @@
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .forms import RegisterForm, Register_as_Landlord
+from .forms import PropertyForm, RegisterForm, Register_as_Landlord, SearchForm
 from .models import MyUser, Property
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
 from django.core.files.storage import FileSystemStorage
@@ -32,7 +32,7 @@ def dashboard(request):
         args["properties"] = Property.objects.all()
         return render(request, 'Api/landlord.html', args)
     elif user_profile.user_type == MyUser.Tenant:
-        return render(request, 'Api/tenant.html')
+        return redirect("tenant")
     else:
         # Handle other cases or raise an error
         pass
@@ -43,7 +43,28 @@ class LandlordSignup(CreateView):
     template_name = "api/landlord_signup.html"
 
 def tenant(request):
-    return render(request, 'Api/tenant.html')
+     form = SearchForm(request.GET)
+     results = Property.objects.all()
+     query = ""
+
+     if form.is_valid():
+        budget = form.cleaned_data.get('query_budget')
+        location = form.cleaned_data.get('query_location')
+        room_type = form.cleaned_data.get('query_type')
+
+        if budget:
+            results = results.filter(price__icontains=budget)
+        
+        if location:
+            results = results.filter(location__icontains=location)
+        
+        if room_type:
+            results = results.filter(property_type__icontains=room_type)
+            
+        return render(request, 'Api/form_search.html', {'form': form, 'results': results, 'query': query})
+     else:
+        form = SearchForm()
+     return render(request, 'Api/form_search.html', {'form': form})
 
 def add_property(request):
     if request.method == 'POST':
@@ -82,8 +103,36 @@ def add_property(request):
         # Render the form (GET request)
         return render(request, 'Api/landlord.html')
 
-def property_search(request):
-    p = Property.objects.get(pk=11)
-    user = MyUser.objects.get(user=request.user.id)
-    print(p.id)
-    return render(request, 'Api/tenant.html', {"user": user, "p": p})
+# def property_search(request):
+#     p = Property.objects.get(pk=11)
+#     user = MyUser.objects.get(user=request.user.id)
+#     print(p.id)
+#     return render(request, 'Api/tenant.html', {"user": user, "p": p})
+
+class PropertyListView(ListView):
+    model=Property
+
+
+def search_form(request):
+    form = SearchForm(request.GET)
+    results = Property.objects.all()
+    query = ""
+
+    if form.is_valid():
+        budget = form.cleaned_data.get('query_budget')
+        location = form.cleaned_data.get('query_location')
+        room_type = form.cleaned_data.get('query_type')
+
+        if budget:
+            results = results.filter(price__icontains=budget)
+        
+        if location:
+            results = results.filter(location__icontains=location)
+        
+        if room_type:
+            results = results.filter(property_type__icontains=room_type)
+            
+        return render(request, 'Api/form_search.html', {'form': form, 'results': results, 'query': query})
+    else:
+        form = SearchForm()
+    return render(request, 'Api/form_search.html', {'form': form})

@@ -15,5 +15,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path("tenant/", views.tenant,  name='tenant'),
     path("add-property/", views.add_property,  name='add-property'),
-    path("property-search/", views.property_search,  name='property-search'),
+    # path("property-search/", views.property_search,  name='property-search'),
+    # path("search-form/", views.search_form, name="search_form"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
