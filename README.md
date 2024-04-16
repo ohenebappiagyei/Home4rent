@@ -21,6 +21,10 @@ The project will help young people easily find, and rent homes. The users will b
 It is an easy to use app, where you're able to view the available properties without the need of signing up, but you will then need to sign up if you want to rent a property, or if you are a landlord, and you'd like to advertise your property.
 You can access our app using this [link](https://h4r.vercel.app/).
 
+
+![image](https://github.com/ohenebappiagyei/Home4rent/assets/135705498/e8bcce55-fa9d-417d-929a-5fad6fed4c3b)
+
+
 ## Technologies
 
 For front-end, we chose to use HTML, CSS, and Javascript since we all have some understanding of it and we wanted to further our knowledge on it.
