@@ -23,15 +23,21 @@
         <section class="search-form">
             <h2>Available Properties</h2>
         {% if results %}
-            <h2>Search Results for "{{ query }}"</h2>
+            <!-- <h2>Search Results for "{{ query }}"</h2> -->
             <ul>
                 {% for result in results %}
-                <li>{{ result.name }} <a href="#">view room</a></li>
+                <li>{{ result.name }} <a href="#">view room</a>
+                   Contact: {{ result.contact }}</li>
                 {% empty %}
                 <li>No results found</li>
                 {% endfor %}
             </ul>
         {% endif %}
+
+        <div class="button">
+            <button>
+              <a href="{% url 'logout' %}">Logout</a>
+            </button>
         </section>
     </main>
 
